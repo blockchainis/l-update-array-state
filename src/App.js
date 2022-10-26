@@ -6,25 +6,25 @@ const initialState = [
   {
     id: 0,
     name: "지수",
-    like: 0,
+    vote: 0,
     imgUrl: "https://i.imgur.com/fcPM46jb.jpg",
   },
   {
     id: 2,
     name: "리사",
-    like: 0,
+    vote: 0,
     imgUrl: "https://i.imgur.com/oGLVAG2b.jpg",
   },
   {
     id: 3,
     name: "로제",
-    like: 0,
+    vote: 0,
     imgUrl: "https://i.imgur.com/9tqOid5b.jpg",
   },
   {
     id: 4,
     name: "제니",
-    like: 0,
+    vote: 0,
     imgUrl: "https://i.imgur.com/zRM3Awgb.jpg",
   },
 ];
@@ -34,15 +34,15 @@ function App() {
     <>
       <GlobalStyle />
       <Wrapper>
-        <Text>당신의 멤버를 선택해주세요</Text>
+        <Text>가장 좋아하는 멤버를 투표해주세요</Text>
         <BlackPinkContainer>
           {blackPink.map((member) => (
             <div key={member.id}>
-              <div>{member.like}</div>
+              <div>투표수: {member.vote}</div>
               <img src={member.imgUrl} alt={member.name} />
               <DetailBox>
                 <div>{member.name}</div>
-                <Button>좋아요</Button>
+                <Button>투표</Button>
               </DetailBox>
             </div>
           ))}
